@@ -73,6 +73,10 @@ class ViewController: NSViewController {
     @IBOutlet weak var sceneNameTF: NSTextField!
     @IBOutlet weak var messageLbl: NSTextField!
     
+    static var instance: NSViewController {
+        return NSStoryboard(name: "Main", bundle: nil).instantiateController(withIdentifier: "Template Generator") as! NSViewController
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
