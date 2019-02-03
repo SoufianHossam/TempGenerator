@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -673,7 +674,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="TemplateCreator" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -683,7 +684,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="Templates Generator" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
@@ -703,15 +704,83 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="TemplateCreator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="207"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="ndJ-GD-W6p" customClass="DropView" customModule="TemplateCreator" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="207"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AH2-1G-1C8">
+                                        <rect key="frame" x="192" y="117" width="96" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Generate" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="vQ3-A3-Jh8">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="saveBtnHandler:" target="XfG-lQ-9wD" id="SVQ-ot-wfq"/>
+                                        </connections>
+                                    </button>
+                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZIi-XY-Bdl">
+                                        <rect key="frame" x="180" y="165" width="120" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="abp-nK-mwT"/>
+                                        </constraints>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" alignment="center" placeholderString="Scene Name" bezelStyle="round" id="JkG-F3-blT">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JIE-yV-rXH">
+                                        <rect key="frame" x="64" y="61" width="352" height="43"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Drop templates here" id="SmZ-zR-Erx">
+                                            <font key="font" size="30" name="Menlo-Regular"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FfD-GS-STe">
+                                        <rect key="frame" x="203" y="13" width="75" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Reset" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zSs-cU-JDW">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="clearBtnHandler:" target="XfG-lQ-9wD" id="02k-IX-P5J"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="FfD-GS-STe" firstAttribute="top" secondItem="JIE-yV-rXH" secondAttribute="bottom" constant="20" id="7yU-sw-e93"/>
+                                    <constraint firstItem="ZIi-XY-Bdl" firstAttribute="centerX" secondItem="ndJ-GD-W6p" secondAttribute="centerX" id="8Qd-7Y-K85"/>
+                                    <constraint firstItem="JIE-yV-rXH" firstAttribute="top" secondItem="AH2-1G-1C8" secondAttribute="bottom" constant="20" id="G4K-dE-FOQ"/>
+                                    <constraint firstItem="ZIi-XY-Bdl" firstAttribute="top" secondItem="ndJ-GD-W6p" secondAttribute="top" constant="20" id="HkM-tA-8YD"/>
+                                    <constraint firstItem="FfD-GS-STe" firstAttribute="centerX" secondItem="ndJ-GD-W6p" secondAttribute="centerX" id="N8N-yc-UaM"/>
+                                    <constraint firstItem="JIE-yV-rXH" firstAttribute="centerX" secondItem="ndJ-GD-W6p" secondAttribute="centerX" id="aae-TO-ndO"/>
+                                    <constraint firstAttribute="bottom" secondItem="FfD-GS-STe" secondAttribute="bottom" constant="20" id="h1v-eq-bnL"/>
+                                    <constraint firstItem="AH2-1G-1C8" firstAttribute="centerX" secondItem="ndJ-GD-W6p" secondAttribute="centerX" id="k7E-uT-BGs"/>
+                                    <constraint firstItem="AH2-1G-1C8" firstAttribute="top" secondItem="ZIi-XY-Bdl" secondAttribute="bottom" constant="20" id="rcS-MX-Qdy"/>
+                                </constraints>
+                            </customView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="ndJ-GD-W6p" secondAttribute="bottom" id="4UE-sg-DcK"/>
+                            <constraint firstAttribute="trailing" secondItem="ndJ-GD-W6p" secondAttribute="trailing" id="O8D-Pf-rQh"/>
+                            <constraint firstItem="ndJ-GD-W6p" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="PEB-2r-Mqr"/>
+                            <constraint firstItem="ndJ-GD-W6p" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="XzX-1z-Oe3"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dragView" destination="ndJ-GD-W6p" id="Nb0-5f-UUO"/>
+                        <outlet property="messageLbl" destination="JIE-yV-rXH" id="3yf-TU-T1Q"/>
+                        <outlet property="sceneNameTF" destination="ZIi-XY-Bdl" id="XYZ-gM-gH9"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="-142" y="894"/>
         </scene>
     </scenes>
 </document>
