@@ -124,6 +124,9 @@ class ViewController: NSViewController {
         openPanel.allowsMultipleSelection = false
         openPanel.canChooseFiles = false
         openPanel.canChooseDirectories = true
+        openPanel.level = .modalPanel
+        
+        (NSApplication.shared.delegate as! AppDelegate).closePopover(sender: self)
         
         openPanel.begin { [unowned self] result -> Void in
             if result == NSApplication.ModalResponse.OK {
