@@ -691,9 +691,9 @@
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="ndJ-GD-W6p" customClass="DropView" customModule="TemplateCreator" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="207"/>
                                 <subviews>
-                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZIi-XY-Bdl">
+                                    <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZIi-XY-Bdl">
                                         <rect key="frame" x="138" y="165" width="205" height="22"/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" alignment="center" placeholderString="Scene Name" bezelStyle="round" id="JkG-F3-blT">
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" focusRingType="none" alignment="center" placeholderString="Scene Name" bezelStyle="round" id="JkG-F3-blT">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>

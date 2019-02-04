@@ -55,10 +55,10 @@
 		318C32CA2200816E00D297A1 /* TemplateCreator */ = {
 			isa = PBXGroup;
 			children = (
+				318C32CF2200817C00D297A1 /* Assets.xcassets */,
 				318C32CB2200816E00D297A1 /* AppDelegate.swift */,
 				31E79FA5220860B100933A5C /* DropView.swift */,
 				318C32CD2200816E00D297A1 /* ViewController.swift */,
-				318C32CF2200817C00D297A1 /* Assets.xcassets */,
 				318C32D12200817C00D297A1 /* Main.storyboard */,
 				318C32D42200817C00D297A1 /* Info.plist */,
 				318C32D52200817C00D297A1 /* TemplateCreator.entitlements */,

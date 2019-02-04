@@ -50,17 +50,17 @@ class DropView: NSView {
         return false
     }
 
-    override func mouseDown(with theEvent: NSEvent) {
+    override func mouseDragged(with event: NSEvent) {
         guard finalURLs.count > 0 else { return }
         
         let pasteboardItem = NSPasteboardItem()
         pasteboardItem.setDataProvider(self, forTypes: [kUTTypeURL as NSPasteboard.PasteboardType])
         
         let draggingItem = NSDraggingItem(pasteboardWriter: pasteboardItem)
-        let dragFrame = CGRect(x: theEvent.locationInWindow.x, y: theEvent.locationInWindow.y, width: 50, height: 55)
+        let dragFrame = CGRect(x: event.locationInWindow.x, y: event.locationInWindow.y, width: 50, height: 55)
         draggingItem.setDraggingFrame(dragFrame, contents: NSWorkspace.shared.icon(forFileType: "swift"))
         
-        beginDraggingSession(with: [draggingItem], event: theEvent, source: self)
+        beginDraggingSession(with: [draggingItem], event: event, source: self)
     }
 }
 
