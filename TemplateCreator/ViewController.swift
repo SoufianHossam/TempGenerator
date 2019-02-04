@@ -8,62 +8,15 @@
 
 import Cocoa
 
-class DropView: NSView {
-    
-    let filteringOptions = [NSPasteboard.ReadingOptionKey.urlReadingContentsConformToTypes: [kUTTypeText]]
-    var files: [Template] = []
-    
-    var doneDropping: (() -> Void)?
-    
-    override func awakeFromNib() {
-        registerForDraggedTypes([NSPasteboard.PasteboardType.URL])
-    }
-    
-    override func draggingEntered(_ sender: NSDraggingInfo) -> NSDragOperation {
-        let pasteBoard = sender.draggingPasteboard
-        
-        if let urls = pasteBoard.readObjects(forClasses: [NSURL.self], options: filteringOptions) as? [URL], urls.count > 0 {
-            return .copy
-        }
-        return NSDragOperation()
-    }
-    
-    override func performDragOperation(_ draggingInfo: NSDraggingInfo) -> Bool {
-        let pasteBoard = draggingInfo.draggingPasteboard
-        
-        if let urls = pasteBoard.readObjects(forClasses: [NSURL.self], options: filteringOptions) as? [URL], urls.count > 0 {
-            
-            urls.forEach { url in
-                do {
-                    let template = Template()
-                    template.content = try String(contentsOf: url)
-                    template.name = url.lastPathComponent
-                    files.append(template)
-                } catch let error {
-                    printView(error.localizedDescription)
-                }
-            }
-            doneDropping?()
-            return true
-        }
-        return false
-    }
-}
-
-class Template {
+class Template: NSCopying {
     var name: String = ""
     var content: String = ""
-}
-
-
-extension NSViewController {
-    func showAlert(title: String, message: String) {
-        let alert = NSAlert()
-        alert.messageText = title
-        alert.informativeText = message
-        alert.alertStyle = .critical
-        alert.addButton(withTitle: "Ok")
-        alert.beginSheetModal(for: self.view.window!)
+    
+    func copy(with zone: NSZone? = nil) -> Any {
+        let copy = Template()
+        copy.name = name
+        copy.content = content
+        return copy
     }
 }
 
@@ -72,6 +25,8 @@ class ViewController: NSViewController {
     @IBOutlet weak var dragView: DropView!
     @IBOutlet weak var sceneNameTF: NSTextField!
     @IBOutlet weak var messageLbl: NSTextField!
+    @IBOutlet weak var generateBtn: NSButton!
+    @IBOutlet weak var clearBtn: NSButton!
     
     static var instance: NSViewController {
         return NSStoryboard(name: "Main", bundle: nil).instantiateController(withIdentifier: "Template Generator") as! NSViewController
@@ -81,13 +36,15 @@ class ViewController: NSViewController {
         super.viewDidLoad()
         
         dragView.doneDropping = { [unowned self] in
-            self.messageLbl.stringValue = "Dropped Successfully"
+            self.messageLbl.stringValue = "Dropped successfully"
             self.messageLbl.textColor = .green
         }
     }
     
     func generateTemplates(with name: String) -> [Template] {
-        return dragView.files.map {
+        let templates: [Template] = dragView.files.map { $0.copy() as! Template }
+        
+        return templates.map {
             $0.name = $0.name.replacingOccurrences(of: "#..#", with: name)
             $0.content = $0.content.replacingOccurrences(of: "#..#", with: name)
             return $0
@@ -100,14 +57,19 @@ class ViewController: NSViewController {
             do {
                 let destinationUrl = url.appendingPathComponent(template.name)
                 try template.content.write(to: destinationUrl, atomically: true, encoding: .utf8)
+                dragView.finalURLs.append(destinationUrl as NSURL)
             }
             catch let error {
                 print(error.localizedDescription)
             }
         }
+        
+        messageLbl.stringValue = "Drag updated templates"
+        messageLbl.textColor = NSColor.yellow
+        generateBtn.isEnabled = false
     }
     
-    @IBAction func saveBtnHandler(_ sender: Any) {
+    @IBAction func generateBtnHandler(_ sender: Any) {
         guard !sceneNameTF.stringValue.isEmpty else {
             showAlert(title: "", message: "Please enter scene name first")
             return
@@ -119,27 +81,40 @@ class ViewController: NSViewController {
             showAlert(title: "", message: "Please drop some template files into the app first")
             return
         }
+
+        let tempURL = FileManager.default.urls(for: .cachesDirectory, in: .allDomainsMask).first!
+        saveTemplates(files, at: tempURL)
         
-        let openPanel = NSOpenPanel()
-        openPanel.allowsMultipleSelection = false
-        openPanel.canChooseFiles = false
-        openPanel.canChooseDirectories = true
-        openPanel.level = .modalPanel
-        
-        (NSApplication.shared.delegate as! AppDelegate).closePopover(sender: self)
-        
-        openPanel.begin { [unowned self] result -> Void in
-            if result == NSApplication.ModalResponse.OK {
-                self.sceneNameTF.stringValue = ""
-                self.saveTemplates(files, at: openPanel.url!)
-            }
-        }
+        clearBtn.isEnabled = true
     }
     
-    @IBAction func clearBtnHandler(_ sender: Any) {
+    @IBAction func resetBtnHandler(_ sender: Any) {
         dragView.files = []
+        dragView.finalURLs = []
         sceneNameTF.stringValue = ""
         messageLbl.stringValue = "Drop templates here"
         messageLbl.textColor = NSColor.labelColor
+        generateBtn.isEnabled = true
+        clearBtn.isEnabled = false
+    }
+    
+    @IBAction func clearBtnHandler(_ sender: Any) {
+        dragView.finalURLs = []
+        sceneNameTF.stringValue = ""
+        messageLbl.stringValue = "Dropped successfully"
+        messageLbl.textColor = NSColor.green
+        generateBtn.isEnabled = true
+    }
+}
+
+
+extension NSViewController {
+    func showAlert(title: String, message: String) {
+        let alert = NSAlert()
+        alert.messageText = title
+        alert.informativeText = message
+        alert.alertStyle = .critical
+        alert.addButton(withTitle: "Ok")
+        alert.beginSheetModal(for: self.view.window!)
     }
 }

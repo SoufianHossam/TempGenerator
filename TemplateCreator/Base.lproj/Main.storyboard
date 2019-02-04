@@ -691,21 +691,8 @@
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="ndJ-GD-W6p" customClass="DropView" customModule="TemplateCreator" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="207"/>
                                 <subviews>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AH2-1G-1C8">
-                                        <rect key="frame" x="192" y="117" width="96" height="32"/>
-                                        <buttonCell key="cell" type="push" title="Generate" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="vQ3-A3-Jh8">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="saveBtnHandler:" target="XfG-lQ-9wD" id="SVQ-ot-wfq"/>
-                                        </connections>
-                                    </button>
                                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZIi-XY-Bdl">
-                                        <rect key="frame" x="180" y="165" width="120" height="22"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="120" id="abp-nK-mwT"/>
-                                        </constraints>
+                                        <rect key="frame" x="138" y="165" width="205" height="22"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" alignment="center" placeholderString="Scene Name" bezelStyle="round" id="JkG-F3-blT">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -727,20 +714,54 @@
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
                                         <connections>
-                                            <action selector="clearBtnHandler:" target="XfG-lQ-9wD" id="02k-IX-P5J"/>
+                                            <action selector="resetBtnHandler:" target="XfG-lQ-9wD" id="qlt-Ub-xXv"/>
                                         </connections>
                                     </button>
+                                    <stackView distribution="fillEqually" orientation="horizontal" alignment="top" spacing="37" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Odi-v6-N4D">
+                                        <rect key="frame" x="138" y="124" width="205" height="21"/>
+                                        <subviews>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AH2-1G-1C8">
+                                                <rect key="frame" x="-6" y="-7" width="96" height="32"/>
+                                                <buttonCell key="cell" type="push" title="Generate" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="vQ3-A3-Jh8">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="generateBtnHandler:" target="XfG-lQ-9wD" id="8Wj-kg-pPg"/>
+                                                </connections>
+                                            </button>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KuA-Mg-kfI">
+                                                <rect key="frame" x="115" y="-7" width="96" height="32"/>
+                                                <buttonCell key="cell" type="push" title="Clear" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="GdB-m2-G63">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="clearBtnHandler:" target="XfG-lQ-9wD" id="kHD-sT-5nR"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="FfD-GS-STe" firstAttribute="top" secondItem="JIE-yV-rXH" secondAttribute="bottom" constant="20" id="7yU-sw-e93"/>
                                     <constraint firstItem="ZIi-XY-Bdl" firstAttribute="centerX" secondItem="ndJ-GD-W6p" secondAttribute="centerX" id="8Qd-7Y-K85"/>
-                                    <constraint firstItem="JIE-yV-rXH" firstAttribute="top" secondItem="AH2-1G-1C8" secondAttribute="bottom" constant="20" id="G4K-dE-FOQ"/>
+                                    <constraint firstItem="Odi-v6-N4D" firstAttribute="top" secondItem="ZIi-XY-Bdl" secondAttribute="bottom" constant="20" id="8kb-OG-4AT"/>
+                                    <constraint firstItem="Odi-v6-N4D" firstAttribute="centerX" secondItem="ndJ-GD-W6p" secondAttribute="centerX" id="C8S-vq-kzD"/>
                                     <constraint firstItem="ZIi-XY-Bdl" firstAttribute="top" secondItem="ndJ-GD-W6p" secondAttribute="top" constant="20" id="HkM-tA-8YD"/>
+                                    <constraint firstItem="ZIi-XY-Bdl" firstAttribute="leading" secondItem="AH2-1G-1C8" secondAttribute="leading" id="Kxv-p0-2eY"/>
                                     <constraint firstItem="FfD-GS-STe" firstAttribute="centerX" secondItem="ndJ-GD-W6p" secondAttribute="centerX" id="N8N-yc-UaM"/>
                                     <constraint firstItem="JIE-yV-rXH" firstAttribute="centerX" secondItem="ndJ-GD-W6p" secondAttribute="centerX" id="aae-TO-ndO"/>
                                     <constraint firstAttribute="bottom" secondItem="FfD-GS-STe" secondAttribute="bottom" constant="20" id="h1v-eq-bnL"/>
-                                    <constraint firstItem="AH2-1G-1C8" firstAttribute="centerX" secondItem="ndJ-GD-W6p" secondAttribute="centerX" id="k7E-uT-BGs"/>
-                                    <constraint firstItem="AH2-1G-1C8" firstAttribute="top" secondItem="ZIi-XY-Bdl" secondAttribute="bottom" constant="20" id="rcS-MX-Qdy"/>
+                                    <constraint firstItem="JIE-yV-rXH" firstAttribute="top" secondItem="Odi-v6-N4D" secondAttribute="bottom" constant="20" id="vQc-fQ-ada"/>
                                 </constraints>
                             </customView>
                         </subviews>
@@ -752,7 +773,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="clearBtn" destination="KuA-Mg-kfI" id="5kJ-bW-vmB"/>
                         <outlet property="dragView" destination="ndJ-GD-W6p" id="Nb0-5f-UUO"/>
+                        <outlet property="generateBtn" destination="AH2-1G-1C8" id="HUc-8J-Jn6"/>
                         <outlet property="messageLbl" destination="JIE-yV-rXH" id="3yf-TU-T1Q"/>
                         <outlet property="sceneNameTF" destination="ZIi-XY-Bdl" id="XYZ-gM-gH9"/>
                     </connections>
