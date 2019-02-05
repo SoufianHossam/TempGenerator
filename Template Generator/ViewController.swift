@@ -86,6 +86,7 @@ class ViewController: NSViewController {
         saveTemplates(files, at: tempURL)
         
         clearBtn.isEnabled = true
+        sceneNameTF.isEnabled = false
     }
     
     @IBAction func resetBtnHandler(_ sender: Any) {
@@ -95,6 +96,7 @@ class ViewController: NSViewController {
         messageLbl.stringValue = "Drop templates here"
         messageLbl.textColor = NSColor.labelColor
         generateBtn.isEnabled = true
+        sceneNameTF.isEnabled = true
         clearBtn.isEnabled = false
     }
     
@@ -104,6 +106,7 @@ class ViewController: NSViewController {
         messageLbl.stringValue = "Dropped successfully"
         messageLbl.textColor = NSColor.green
         generateBtn.isEnabled = true
+        sceneNameTF.isEnabled = true
     }
 }
 
