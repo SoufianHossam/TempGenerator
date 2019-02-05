@@ -15,7 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		318C32C82200816E00D297A1 /* TemplateCreator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TemplateCreator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		318C32C82200816E00D297A1 /* Temp Generator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Temp Generator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		318C32CB2200816E00D297A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		318C32CD2200816E00D297A1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		318C32CF2200817C00D297A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -39,7 +39,7 @@
 		318C32BF2200816E00D297A1 = {
 			isa = PBXGroup;
 			children = (
-				318C32CA2200816E00D297A1 /* TemplateCreator */,
+				318C32CA2200816E00D297A1 /* Template Generator */,
 				318C32C92200816E00D297A1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -47,12 +47,12 @@
 		318C32C92200816E00D297A1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				318C32C82200816E00D297A1 /* TemplateCreator.app */,
+				318C32C82200816E00D297A1 /* Temp Generator.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		318C32CA2200816E00D297A1 /* TemplateCreator */ = {
+		318C32CA2200816E00D297A1 /* Template Generator */ = {
 			isa = PBXGroup;
 			children = (
 				318C32CF2200817C00D297A1 /* Assets.xcassets */,
@@ -63,15 +63,15 @@
 				318C32D42200817C00D297A1 /* Info.plist */,
 				318C32D52200817C00D297A1 /* TemplateCreator.entitlements */,
 			);
-			path = TemplateCreator;
+			path = "Template Generator";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		318C32C72200816E00D297A1 /* TemplateCreator */ = {
+		318C32C72200816E00D297A1 /* Temp Generator */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 318C32D82200817C00D297A1 /* Build configuration list for PBXNativeTarget "TemplateCreator" */;
+			buildConfigurationList = 318C32D82200817C00D297A1 /* Build configuration list for PBXNativeTarget "Temp Generator" */;
 			buildPhases = (
 				318C32C42200816E00D297A1 /* Sources */,
 				318C32C52200816E00D297A1 /* Frameworks */,
@@ -81,9 +81,9 @@
 			);
 			dependencies = (
 			);
-			name = TemplateCreator;
+			name = "Temp Generator";
 			productName = TemplateCreator;
-			productReference = 318C32C82200816E00D297A1 /* TemplateCreator.app */;
+			productReference = 318C32C82200816E00D297A1 /* Temp Generator.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -106,7 +106,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 318C32C32200816E00D297A1 /* Build configuration list for PBXProject "TemplateCreator" */;
+			buildConfigurationList = 318C32C32200816E00D297A1 /* Build configuration list for PBXProject "Temp Generator" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -119,7 +119,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				318C32C72200816E00D297A1 /* TemplateCreator */,
+				318C32C72200816E00D297A1 /* Temp Generator */,
 			);
 		};
 /* End PBXProject section */
@@ -283,7 +283,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 86MGZ7B3XL;
-				INFOPLIST_FILE = TemplateCreator/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Template Generator/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -302,7 +302,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 86MGZ7B3XL;
-				INFOPLIST_FILE = TemplateCreator/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Template Generator/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -317,7 +317,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		318C32C32200816E00D297A1 /* Build configuration list for PBXProject "TemplateCreator" */ = {
+		318C32C32200816E00D297A1 /* Build configuration list for PBXProject "Temp Generator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				318C32D62200817C00D297A1 /* Debug */,
@@ -326,7 +326,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		318C32D82200817C00D297A1 /* Build configuration list for PBXNativeTarget "TemplateCreator" */ = {
+		318C32D82200817C00D297A1 /* Build configuration list for PBXNativeTarget "Temp Generator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				318C32D92200817C00D297A1 /* Debug */,

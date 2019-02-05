@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:TemplateCreator.xcodeproj">
+      location = "self:/Users/tr/Desktop/TemplateCreator/Temp Generator.xcodeproj">
    </FileRef>
 </Workspace>
