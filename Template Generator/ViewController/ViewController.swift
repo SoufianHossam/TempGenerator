@@ -1,24 +1,12 @@
 //
 //  ViewController.swift
-//  TemplateCreator
+//  TempGenerator
 //
 //  Created by Soufian Hossam on 1/29/19.
-//  Copyright © 2019 SICT. All rights reserved.
+//  Copyright © 2019 Soufian Hossam. All rights reserved.
 //
 
 import Cocoa
-
-class Template: NSCopying {
-    var name: String = ""
-    var content: String = ""
-    
-    func copy(with zone: NSZone? = nil) -> Any {
-        let copy = Template()
-        copy.name = name
-        copy.content = content
-        return copy
-    }
-}
 
 class ViewController: NSViewController {
     
@@ -111,13 +99,4 @@ class ViewController: NSViewController {
 }
 
 
-extension NSViewController {
-    func showAlert(title: String, message: String) {
-        let alert = NSAlert()
-        alert.messageText = title
-        alert.informativeText = message
-        alert.alertStyle = .critical
-        alert.addButton(withTitle: "Ok")
-        alert.beginSheetModal(for: self.view.window!)
-    }
-}
+

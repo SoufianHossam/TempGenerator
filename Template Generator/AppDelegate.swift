@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  TemplateCreator
+//  TempGenerator
 //
 //  Created by Soufian Hossam on 1/29/19.
-//  Copyright © 2019 SICT. All rights reserved.
+//  Copyright © 2019 Soufian Hossam. All rights reserved.
 //
 
 import Cocoa
