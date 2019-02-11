@@ -10,6 +10,7 @@
 		310D0AB7221043AF00843D97 /* NSViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310D0AB6221043AF00843D97 /* NSViewController + Extensions.swift */; };
 		310D0ABB2210449600843D97 /* Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310D0ABA2210449600843D97 /* Template.swift */; };
 		310D0AFE221050E700843D97 /* Demo.mov in Resources */ = {isa = PBXBuildFile; fileRef = 310D0AFD221050E600843D97 /* Demo.mov */; };
+		3136A6BB221163D000E37226 /* Demo-min.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3136A6BA221163D000E37226 /* Demo-min.gif */; };
 		318C32CC2200816E00D297A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318C32CB2200816E00D297A1 /* AppDelegate.swift */; };
 		318C32CE2200816E00D297A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318C32CD2200816E00D297A1 /* ViewController.swift */; };
 		318C32D02200817C00D297A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 318C32CF2200817C00D297A1 /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 		310D0AB6221043AF00843D97 /* NSViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSViewController + Extensions.swift"; sourceTree = "<group>"; };
 		310D0ABA2210449600843D97 /* Template.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Template.swift; sourceTree = "<group>"; };
 		310D0AFD221050E600843D97 /* Demo.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = Demo.mov; sourceTree = "<group>"; };
+		3136A6BA221163D000E37226 /* Demo-min.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "Demo-min.gif"; sourceTree = "<group>"; };
 		318C32C82200816E00D297A1 /* Temp Generator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Temp Generator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		318C32CB2200816E00D297A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		318C32CD2200816E00D297A1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 				318C32D52200817C00D297A1 /* TemplateCreator.entitlements */,
 				318C32CF2200817C00D297A1 /* Assets.xcassets */,
 				310D0AFD221050E600843D97 /* Demo.mov */,
+				3136A6BA221163D000E37226 /* Demo-min.gif */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 			files = (
 				318C32D02200817C00D297A1 /* Assets.xcassets in Resources */,
 				310D0AFE221050E700843D97 /* Demo.mov in Resources */,
+				3136A6BB221163D000E37226 /* Demo-min.gif in Resources */,
 				318C32D32200817C00D297A1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
