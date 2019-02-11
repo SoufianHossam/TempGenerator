@@ -6,7 +6,7 @@
 
 <h3 style=”color: gray;"> Temp Generator is a menu bar application for Mac OS X that helps you generate boilerplate code in a matter of seconds, just by drag and drop movements.
 <br/>
-                        
+<br/>                        
 This will be very handy when you use MVVM, MVVM-R, MVP, VIPER and CleanSwift architectures. </h3> 
 <br/>
 <p align="center">
