@@ -72,7 +72,7 @@ class #..#ViewController: UIViewController {
 <br/>
 
 ## Installation
-Clone this repo, build then run the app or simply [Download The App From Here](https://drive.google.com/a/selecteg.com/uc?authuser=0&id=1FJNimQ8fAsLqNneQcmOzXhMsyknqq1rF&export=download)
+Clone this repo, build then run the app or simply [Download The App From Here](https://drive.google.com/uc?authuser=1&id=1zygoB93237bx8IZFXTSmQ-l1YLLruxFr&export=download)
 
 ## License
 
